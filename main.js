@@ -147,6 +147,7 @@ function changePlayer(){
 
 function savePlayers(){
   window.localStorage.setItem("players", JSON.stringify(players))
+  console.log(players)
 }
 
 function loadPlayers(){
