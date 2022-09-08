@@ -154,7 +154,7 @@ function loadPlayers(){
   if(playersData){
     players = playersData
   }
-
+console.log(players)
 }
 
 function drawScoreboard(){
