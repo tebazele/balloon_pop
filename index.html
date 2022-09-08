@@ -1,0 +1,86 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ballon Pop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:ital,wght@1,900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div class="container shadow">
+      <img src="balloonpoplogo.png" alt="balloon pop logo">
+    </div>
+  </header>
+  <main class="card container">
+  <!-- remove hidden class done -->
+    <form onsubmit="setPlayer(event)" id="playerForm" class="d-flex space-between">
+    <div>
+      <label for="name">
+        <i class="fa-solid fa-circle-user"></i>
+          <span>Player Name:</span></label>
+      <input type="text" name="playerName" id="name" required>
+    </div>
+    <button type="submit">OK</button>
+  </form>
+
+  <!-- REPLACE hidden class in section done -->
+  <section class="game hidden" id="game">
+
+    <div class="card bg-dark text-light">
+      <div class="d-flex space-between">
+        <div>
+          <i class="fa-solid fa-circle-user"></i>
+          <span id="player-name"></span>
+        </div>
+        <div>
+          <span>Top Score</span>
+          <span id="high-pop-count">0</span>
+        </div>
+      </div>
+    </div>
+<!-- remove hidden done -->
+    <div id="main-controls" class="d-flex space-around marg-top-2">
+      <button class="btn-dark" onclick="changePlayer()">Change Player</button>
+      <button onClick="startGame()" id="start-button">START GAME</button>
+    </div>
+<!-- replace hidden done -->
+    <div id="game-controls" class="hidden">
+      <div>
+        <span>Balloons Popped</span>
+        <span id="pop-count">0</span>
+      </div>
+  
+      <div>
+       <span>Time Remaining:</span>
+        <span id="countdown">0</span>
+      </div>
+
+      <div class="game-container d-flex">
+        <div class="pump" onClick="inflate()">
+          <div class="handle"></div>
+          <div class="pump-box">
+            <span id="click-count">0</span>
+          </div>
+        </div>
+          <div id="balloon" class="balloon"></div>
+          <audio id="pop-sound" src="burst.mp3"></audio>
+      </div>
+      
+    </div>
+  </section>
+  </main>
+
+  <div class="container card marg-top-2" id="scoreboard">
+      <h3 class="text-center">Scoreboard</h3>
+      <div id="players">
+      </div>
+      
+  </div>
+  <script src="https://kit.fontawesome.com/7323331411.js" crossorigin="anonymous"></script>
+  <script src="main.js"></script>
+</body>
+</html>
